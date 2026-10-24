@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TV_Шаповалова.Classes
 {
-    internal class Channel
+    public class Channel
     {
         public string Name { get; set; }
-        public string SRC { get; set; }
+        public string Src { get; set; }
     }
 }
