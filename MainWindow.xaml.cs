@@ -20,19 +20,22 @@ namespace TV_Шаповалова
     /// </summary>
     public partial class MainWindow : Window
     {
+        Classes.TV TV = new Classes.TV();
         public MainWindow()
         {
             InitializeComponent();
+            VideoPLayer.Source = new Uri(TV.Channels[TV.ActiveChannel].Src);
+            VideoPLayer.Play();
         }
 
         private void BackChannel(object sender, RoutedEventArgs e)
         {
-
+            TV.BackChannel(VideoPLayer, NameChannel);
         }
 
         private void NextChannel(object sender, RoutedEventArgs e)
         {
-
+            TV.NextChannel(VideoPLayer, NameChannel);
         }
     }
 }

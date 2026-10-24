@@ -74,6 +74,11 @@ namespace TV_Шаповалова.Classes
 
         public void NextChannel(MediaElement _MediaElement, Label _NameChannel)
         {
+            ActiveChannel++;
+            SwapChanell(_MediaElement, _NameChannel);
+        }
+        public void BackChannel(MediaElement _MediaElement, Label _NameChannel)
+        {
             ActiveChannel--;
             SwapChanell(_MediaElement, _NameChannel);
         }
