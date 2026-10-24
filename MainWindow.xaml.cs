@@ -24,5 +24,15 @@ namespace TV_Шаповалова
         {
             InitializeComponent();
         }
+
+        private void BackChannel(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void NextChannel(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
