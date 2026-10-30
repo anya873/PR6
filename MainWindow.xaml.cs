@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace TV_Шаповалова
 {
     /// <summary>
@@ -26,6 +27,7 @@ namespace TV_Шаповалова
             InitializeComponent();
             VideoPLayer.Source = new Uri(TV.Channels[TV.ActiveChannel].Src);
             VideoPLayer.Play();
+            VolumeText.Text = "Громкость: 50%";
         }
 
         private void BackChannel(object sender, RoutedEventArgs e)
@@ -67,15 +69,37 @@ namespace TV_Шаповалова
         {
             TV.Power(VideoPLayer, NameChannel, PowerButton);
         }
+        private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (Keyboard.IsKeyDown(Key.LeftAlt) || Keyboard.IsKeyDown(Key.RightAlt))
+            {
+                if (e.Key == Key.D1 || e.Key == Key.NumPad1 || e.SystemKey == Key.D1 || e.SystemKey == Key.NumPad1)
+                {
+                    if (TV.IsOn)
+                    {
+                        TV.UpSound(VideoPLayer, VolumeText);
+                        e.Handled = true;
+                    }
+                }
+                else if (e.Key == Key.D2 || e.Key == Key.NumPad2 || e.SystemKey == Key.D2 || e.SystemKey == Key.NumPad2)
+                {
+                    if (TV.IsOn)
+                    {
+                        TV.DownSound(VideoPLayer, VolumeText);
+                        e.Handled = true;
+                    }
+                }
+            }
+        }
 
         private void DownSound_Click(object sender, RoutedEventArgs e)
         {
-
+            if (TV.IsOn) TV.DownSound(VideoPLayer, VolumeText);
         }
 
         private void UpSound_Click(object sender, RoutedEventArgs e)
         {
-
+            if (TV.IsOn) TV.UpSound(VideoPLayer, VolumeText);
         }
     }
 }

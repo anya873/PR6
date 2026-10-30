@@ -10,6 +10,7 @@ namespace TV_Шаповалова.Classes
         private int activeChannel = 0;
         private int activeVolume = 5;
         private bool isOn = false;
+        private int activeProgram = 0;
 
         public List<Channel> Channels = new List<Channel>();
 
@@ -30,25 +31,53 @@ namespace TV_Шаповалова.Classes
                     activeChannel = 0;
                 else
                     activeChannel = value;
+                activeProgram = 0;
             }
         }
-
+        public int ActiveProgram
+        {
+            get { return activeProgram; }
+            set
+            {
+                if (value < 0)
+                    activeProgram = Channels[ActiveChannel].ProgramNames.Count - 1;
+                else if (value >= Channels[ActiveChannel].ProgramNames.Count)
+                    activeProgram = 0;
+                else
+                    activeProgram = value;
+            }
+        }
         public TV()
         {
             Channels.Add(new Channel()
             {
                 Name = "Практическое занятие №3 Объявление классов и создание объектов в C#.mp4",
-                Src = @"C:\Users\aooshepkov\Dowloads\1.mp4"
+                Src = @"http://clips.vorwaerts-gmbh.de/VfE_html5.mp4",
+                ProgramNames = new List<string> { "Новости", "Мультфильм" },
+                ProgramSrcs = new List<string> {
+            "http://clips.vorwaerts-gmbh.de/VfE_html5.mp4",
+            "http://yandex.ru/video/preview/8072185781866145444"
+        }
             });
             Channels.Add(new Channel()
             {
                 Name = "Практическое занятие №4 Использование методов ООП Разница между простыми и статистическими методами.mp4",
-                Src = @"C:\Users\aooshepkov\Dowloads\2.mp4"
+                Src = @"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+                ProgramNames = new List<string> { "Документалка", "Спорт" },
+                ProgramSrcs = new List<string> {
+            "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+            "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
+        }
             });
             Channels.Add(new Channel()
             {
                 Name = "Практическое занятие №4 Конструкторы в ООП.mp4",
-                Src = @"C:\Users\aooshepkov\Dowloads\2.mp4"
+                Src = @"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+                ProgramNames = new List<string> { "Кино", "Музыка" },
+                ProgramSrcs = new List<string> {
+            "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+            "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
+        }
             });
             Channels.Add(new Channel()
             {
@@ -170,16 +199,18 @@ namespace TV_Шаповалова.Classes
             SwapChanell(_MediaElement, _NameChannel);
         }
 
-        public void UpSound(MediaElement _MediaElement)
+        public void UpSound(MediaElement _MediaElement, TextBlock _VolumeText)
         {
             if (activeVolume < 10) activeVolume++;
             _MediaElement.Volume = activeVolume / 10.0;
+            _VolumeText.Text = $"Громкость: {activeVolume * 10}%";
         }
 
-        public void DownSound(MediaElement _MediaElement)
+        public void DownSound(MediaElement _MediaElement, TextBlock _VolumeText)
         {
             if (activeVolume > 0) activeVolume--;
             _MediaElement.Volume = activeVolume / 10.0;
+            _VolumeText.Text = $"Громкость: {activeVolume * 10}%";
         }
     }
 }
