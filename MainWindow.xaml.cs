@@ -37,5 +37,25 @@ namespace TV_Шаповалова
         {
             TV.NextChannel(VideoPLayer, NameChannel);
         }
+
+        private void Num_Click(object sender, RoutedEventArgs e)
+        {
+            int num = int.Parse(numChannel.Text);
+        }
+
+        private void Power_Click(object sender, RoutedEventArgs e)
+        {
+            TV.Power(VideoPLayer, NameChannel, PowerButton);
+        }
+
+        private void DownSound_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UpSound_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
