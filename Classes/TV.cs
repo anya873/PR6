@@ -50,6 +50,61 @@ namespace TV_Шаповалова.Classes
                 Name = "Практическое занятие №4 Конструкторы в ООП.mp4",
                 Src = @"C:\Users\aooshepkov\Dowloads\2.mp4"
             });
+            Channels.Add(new Channel()
+            {
+                Name = "Четвертый канал",
+                Src = @"C:\Users\aooshepkov\Dowloads\4.mp4"
+            });
+            Channels.Add(new Channel()
+            {
+                Name = "Пятый канал",
+                Src = @"C:\Users\aooshepkov\Dowloads\5.mp4"
+            });
+            Channels.Add(new Channel()
+            {
+                Name = "Шестой канал",
+                Src = @"C:\Users\aooshepkov\Dowloads\6.mp4"
+            });
+            Channels.Add(new Channel()
+            {
+                Name = "Седьмой канал",
+                Src = @"C:\Users\aooshepkov\Dowloads\7.mp4"
+            });
+            Channels.Add(new Channel()
+            {
+                Name = "Восьмой канал",
+                Src = @"C:\Users\aooshepkov\Dowloads\8.mp4"
+            });
+            Channels.Add(new Channel()
+            {
+                Name = "Девятый канал",
+                Src = @"C:\Users\aooshepkov\Dowloads\9.mp4"
+            });
+            Channels.Add(new Channel()
+            {
+                Name = "Десятый канал",
+                Src = @"C:\Users\aooshepkov\Dowloads\10.mp4"
+            });
+            Channels.Add(new Channel()
+            {
+                Name = "Одиннадцатый канал",
+                Src = @"C:\Users\aooshepkov\Dowloads\11.mp4"
+            });
+            Channels.Add(new Channel()
+            {
+                Name = "Двенадцатый канал",
+                Src = @"C:\Users\aooshepkov\Dowloads\12.mp4"
+            });
+            Channels.Add(new Channel()
+            {
+                Name = "Тринадцатый канал",
+                Src = @"C:\Users\aooshepkov\Dowloads\13.mp4"
+            });
+            Channels.Add(new Channel()
+            {
+                Name = "Четырнадцатый канал",
+                Src = @"C:\Users\aooshepkov\Dowloads\14.mp4"
+            });
         }
 
         public void Power(MediaElement _MediaElement, TextBlock _NameChannel, Button _PowerButton)

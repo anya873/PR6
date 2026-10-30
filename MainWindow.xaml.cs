@@ -40,7 +40,27 @@ namespace TV_Шаповалова
 
         private void Num_Click(object sender, RoutedEventArgs e)
         {
-            int num = int.Parse(numChannel.Text);
+            if (!TV.IsOn)
+            {
+                MessageBox.Show("Сначала включите телевизор", "Ошибка");
+                return;
+            }
+            if (int.TryParse(numChannel.Text, out int num))
+            {
+                if (num >= 1 && num <= TV.Channels.Count)
+                {
+                    TV.ActiveChannel = num - 1;
+                    TV.SwapChanell(VideoPLayer, NameChannel);
+                }
+                else
+                {
+                    MessageBox.Show($"Канала с номером {num} не существует. Введите число от 1 до {TV.Channels.Count}.", "Ошибка");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Введите корректный номер канала (цифру).", "Ошибка");
+            }
         }
 
         private void Power_Click(object sender, RoutedEventArgs e)
