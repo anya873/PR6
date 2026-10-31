@@ -52,31 +52,31 @@ namespace TV_Шаповалова.Classes
             Channels.Add(new Channel()
             {
                 Name = "Практическое занятие №3 Объявление классов и создание объектов в C#.mp4",
-                Src = @"http://clips.vorwaerts-gmbh.de/VfE_html5.mp4",
+                Src = @"C:\Users\Student-A502.PERMAVIAT\Desktop\sample-5s-360p.mp4",
                 ProgramNames = new List<string> { "Новости", "Мультфильм" },
                 ProgramSrcs = new List<string> {
-            "http://clips.vorwaerts-gmbh.de/VfE_html5.mp4",
-            "http://yandex.ru/video/preview/8072185781866145444"
+            @"C:\Users\Student-A502.PERMAVIAT\Desktop\sample-5s-360p.mp4",
+            @"C:\Users\Student-A502.PERMAVIAT\Desktop\sample-10s-vp9.mp4"
         }
             });
             Channels.Add(new Channel()
             {
                 Name = "Практическое занятие №4 Использование методов ООП Разница между простыми и статистическими методами.mp4",
-                Src = @"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+                Src = @"C:\Users\Student-A502.PERMAVIAT\Desktop\sample-5s-360p.mp4",
                 ProgramNames = new List<string> { "Документалка", "Спорт" },
                 ProgramSrcs = new List<string> {
-            "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-            "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
+            @"C:\Users\Student-A502.PERMAVIAT\Desktop\sample-5s-360p.mp4",
+            @"C:\Users\Student-A502.PERMAVIAT\Desktop\sample-10s-vp9.mp4"
         }
             });
             Channels.Add(new Channel()
             {
                 Name = "Практическое занятие №4 Конструкторы в ООП.mp4",
-                Src = @"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+                Src = @"C:\Users\Student-A502.PERMAVIAT\Desktop\sample-10s-vp9.mp4",
                 ProgramNames = new List<string> { "Кино", "Музыка" },
                 ProgramSrcs = new List<string> {
-            "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-            "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
+            @"C:\Users\Student-A502.PERMAVIAT\Desktop\sample-10s-vp9.mp4",
+            @"C:\Users\Student-A502.PERMAVIAT\Desktop\Welcome_Present.mov"
         }
             });
             Channels.Add(new Channel()
